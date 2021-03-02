@@ -180,8 +180,15 @@ elif [ ! -z "$SLURM_JOBID" ]; then
     host_color="$green"
 fi
 
-export PS1="${gray}(${host_color}\h${gray}):${cyan}\W${gray}\$${reset} "
-export PROMPT_COMMAND='echo -ne "\033]0;$(hostname -s): ${PWD}\007"'
+__promt_command() {
+    local EXIT_CODE="$?"
+    PS1="${gray}(${host_color}\h${gray}):${cyan}\W"
+    if [ $EXIT_CODE != 0 ]; then
+        PS1+="${red}($EXIT_CODE)"
+    fi
+    PS1+="${gray}\$${reset} "
+}
+export PROMPT_COMMAND=__promt_command
 
 #------------------------------------------------------------------------
 # Completion

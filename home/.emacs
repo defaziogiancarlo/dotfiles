@@ -139,8 +139,8 @@
 ; (set-background-color "white")   (set-foreground-color "black")
 
 ; fix emacs 22.1.1 not coloring comments (if not using color-theme)
-;(set-face-foreground 'font-lock-comment-face "red")
-;(set-face-foreground 'font-lock-comment-delimiter-face "red")
+(set-face-foreground 'font-lock-comment-face "red")
+(set-face-foreground 'font-lock-comment-delimiter-face "red")
 
 (set-face-foreground 'mode-line "#EEEEEE")
 (set-face-background 'mode-line "#303030")
@@ -286,7 +286,7 @@
 ;; ===========================================================================
 ;; Nice line numbering (see ~/.elisp/linums.el)
 ;; ===========================================================================
-;(require 'linums)
+(require 'linums)
 
 ;; ===========================================================================
 ;; C Mode Setup
