@@ -1,16 +1,15 @@
 [user]
-    name = Todd Gamblin
-    email = tgamblin@llnl.gov
-        signingkey = EBA2E92CCA0EFD1F480D5C4A66B24B9050FDD0B8
+    name = Gian-Carlo DeFazio
+    email = defazio1@llnl.gov
 
 [merge]
     tool = opendiff
 
 [color]
-    ui = auto
+    ui = always
 
 [core]
-    excludesfile = /Users/gamblin2/.gitignore_global
+    #excludesfile = /Users/gamblin2/.gitignore_global
 
 [pager]
     # Preserve color and don't wrap lines in my fancy git logs (see below)
@@ -35,11 +34,11 @@
 
     # show all branches
     br = branch --sort=-committerdate \
-        --format '%(HEAD) %(color:red)%(objectname:short)%(color:reset)  %(if)%(HEAD)%(then)%(color:green)%(refname:short)%(color:reset)%(else)%(refname:short)%(end) - %(color:cyan)(%(committerdate:relative)%(if:notequals=Todd Gamblin)%(authorname)%(then), %(color:bold blue)by %(authorname)%(color:reset)%(color:cyan)%(end)) %(color:white)%(upstream:track)%(color:reset)%(color:reset)'
+       --format '%(HEAD) %(color:red)%(objectname:short)%(color:reset)  %(if)%(HEAD)%(then)%(color:green)%(refname:short)%(color:reset)%(else)%(refname:short)%(end) - %(color:cyan)(%(committerdate:relative)%(if:notequals=Gian-Carlo DeFazio)%(authorname)%(then), %(color:bold blue)by %(authorname)%(color:reset)%(color:cyan)%(end)) %(color:white)%(upstream:track)%(color:reset)%(color:reset)'
 
     # show tracking branches
     bt = branch --sort=-committerdate \
-                --format '%(HEAD) %(color:red)%(objectname:short)%(color:reset)  %(if)%(HEAD)%(then)%(color:green)%(refname:short)%(color:reset)%(else)%(refname:short)%(end) - %(color:cyan)(%(committerdate:relative)%(if:notequals=Todd Gamblin)%(authorname)%(then), %(color:bold blue)by %(authorname)%(color:reset)%(color:cyan)%(end))%(color:reset)%(if)%(upstream)%(then) -> %(color:magenta)%(upstream:short) %(color:white)%(upstream:track)%(color:reset)%(end)'
+                --format '%(HEAD) %(color:red)%(objectname:short)%(color:reset)  %(if)%(HEAD)%(then)%(color:green)%(refname:short)%(color:reset)%(else)%(refname:short)%(end) - %(color:cyan)(%(committerdate:relative)%(if:notequals=Gian-Carlo DeFazio)%(authorname)%(then), %(color:bold blue)by %(authorname)%(color:reset)%(color:cyan)%(end))%(color:reset)%(if)%(upstream)%(then) -> %(color:magenta)%(upstream:short) %(color:white)%(upstream:track)%(color:reset)%(end)'
 
     # remove branches whose remote tracking branch is gone
     bgone = !"f() { \
@@ -67,12 +66,10 @@
       fi \
     }; f"
 
-    #
     # `git b` with no arguments shows branches ordered by commit date
     # (most recent first)
-    #
+	#
     # With arguments, it behaves like `git branch`
-    #
     b = !"f() { \
             if [ $# -ne 0 ]; then \
                 git branch \"$@\"; \
@@ -82,6 +79,7 @@
             fi; \
         }; f"
 
+	#b = branch -v
 
     #
     # Fancy logging: shows DAG in ascii with color alongside commits.
@@ -235,8 +233,8 @@
     prompt = false
     cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 
-[mergetool "sourcetree"]
-    cmd = /Users/gamblin2/Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+#[mergetool "sourcetree"]
+    #cmd = /Users/gamblin2/Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
     trustExitCode = true
 [difftool "sourcetree"]
     cmd = opendiff \"$LOCAL\" \"$REMOTE\"
