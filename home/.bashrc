@@ -203,7 +203,7 @@ source_if_exists $HOME/.completion.d/git-completion.bash
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # Make grep highlight search string in red
-export GREP_OPTIONS='--color=auto'
+alias grep='grep --color=auto'
 
 # Python startup file
 export PYTHONSTARTUP=~/.python
