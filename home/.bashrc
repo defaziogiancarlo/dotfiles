@@ -212,3 +212,29 @@ alias more='less'
 alias screen='screen -R -D'
 alias d=docker
 alias kc=kubectl
+
+# quick way to ssh into vagrant managed vm
+alias vsd='vagrant ssh default'
+
+# better formatting for ansible output
+export ANSIBLE_STDOUT_CALLBACK=debug
+
+# sometime solve issue with gpg password entering
+GPG_TTY=$(tty)
+export GPG_TTY
+
+# conda setup for my desktop
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/defazio1/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/defazio1/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/defazio1/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/defazio1/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
