@@ -204,8 +204,8 @@
 
 ; view headers and c files in c++ mode
 (autoload 'cpp-font-lock "cpp-font-lock")
-(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
-(add-to-list 'auto-mode-alist '("\\.c\\'" . c++-mode))
+;(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
+;(add-to-list 'auto-mode-alist '("\\.c\\'" . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.I\\'" . c++-mode))
 
 ; Yacc and Lex in C mode
@@ -291,6 +291,7 @@
 ;; ===========================================================================
 ;; C Mode Setup
 ;; ===========================================================================
+
 (setq c-default-style '((java-mode . "java")
                         (awk-mode . "awk")
                         (other . "linux")))
@@ -303,8 +304,8 @@
 ;; c hook -- sets tabs
 (defun my-c-mode-common-hook ()
   (setq-default standard-indent 2)
-  (setq tab-width 2)
-  (setq c-basic-offset 2)
+  (setq tab-width 8)
+  (setq c-basic-offset 8)
   (set-fill-column 78)
   (c-set-offset 'innamespace 0))
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
