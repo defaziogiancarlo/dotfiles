@@ -208,6 +208,14 @@ alias grep='grep --color=auto'
 # Python startup file
 export PYTHONSTARTUP=~/.python
 
+# use python 3.8 if available, this is work specific and
+# should be removed at some point as the versions change
+# lower version may not have the git library on some systems
+if command -v python3-3.8.2 &> /dev/null
+then
+    alias python3='python3-3.8.2'
+fi
+
 alias more='less'
 alias screen='screen -R -D'
 alias d=docker
