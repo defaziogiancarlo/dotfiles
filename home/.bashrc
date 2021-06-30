@@ -220,8 +220,7 @@ alias vsd='vagrant ssh default'
 export ANSIBLE_STDOUT_CALLBACK=debug
 
 # sometime solve issue with gpg password entering
-GPG_TTY=$(tty)
-export GPG_TTY
+export GPG_TTY=$(tty)
 
 # conda setup for my desktop
 # >>> conda initialize >>>
